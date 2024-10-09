@@ -1,0 +1,38 @@
+*{
+    margin: 10;
+}
+
+html{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    
+   
+    background-color:#78A658;
+}
+div{
+  
+  
+    background-color:#1E3640;
+}
+span{
+    background-color: #1E3640;
+    width: 100%;
+    display: block;
+}
+.About-us{
+    background-color: #BF834E ;
+}
+
+.Join-us{
+    background-color: #BF834E ;
+}
+img{
+    width: 500px;
+}
+
+p{
+    font-size: larger;
+    width: 75%;
+}

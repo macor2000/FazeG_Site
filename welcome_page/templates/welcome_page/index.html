@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazeg home page</title>
+    {% load static %}
+    <link rel = "stylesheet" href = "{% static 'welcome_page/style1.css'%}">
+</head>
+
+
+<body>
+    <header> 
+        
+        <h1>Welcome to the FaZeg site!</h1>
+        <nav>
+            <ul>
+                <li><a href = '#' >Our leaders</a></li>
+              <li><a href="http://127.0.0.1:8000/welcome_page/info/">Send in an application!</a></li>
+              <li><a href="http://127.0.0.1:8000/welcome_page/blog/">Check out our Blog!</a></li>
+            </ul>
+      
+            <!-- A Search form is another common non-linear way to navigate through a website. -->
+      
+            <form>
+              <input type="search" name="q" placeholder="This doesn't work" />
+              <input type="submit" value="Go!" />
+            </form>
+          </nav>
+    </header>
+    <span>
+    <div>
+    {%load static %}
+    <img src = "{% static 'welcome_page/images/Fazge logo.jpg' %}" alt = "Cute Frog">
+    </div>
+    <section class = "About-us">
+    <h2>About us</h2>
+    <p> FaZeg is all about the power of love, growth and loyalty. We want to bring the best out of our
+        little tadpoles so that they can grow into our most powerful soldiers.
+    </p>
+    <p>
+        FaZeg Clan is a Call of Duty clan that is about making friends and having fun. When you 
+        become part of faZeg you'll never want to leave!
+    </p>
+    </section>
+
+
+    <section class = "Join-us">
+        <h2>Why you should join</h2>
+    <p>Here is a list of reasons to join FaZeg.</p>
+    <ul>
+        <li> Fun Vibes. (If the game we happen to be playing is fun).</li>
+        <li> Free pizza (Thats a lie).</li>
+        <li> If you want us to, we'll do your taxes for you, if we desire to (We don't).</li>
+    </ul>
+    </section>
+   </span>
+ 
+<footer>
+<p> Fake ©Copyright 1991 by Da Frog boiz. Ribbit Ribbit☺</p>
+
+
+</footer>
+</body>
+</html>
