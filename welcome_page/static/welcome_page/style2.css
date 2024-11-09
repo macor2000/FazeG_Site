@@ -1,24 +1,10 @@
 html{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-body{
-    background-color: beige;
-    justify-content: center;
-    align-content: center;
+    background-color: #14d26a;
+    
+    
 }
 
 
-.About-us{
-    background-color: orange;
-}
-
-.Join-us{
-    background-color: blue;
-}
-
-img{
-    width: 500px;
-}
 
 

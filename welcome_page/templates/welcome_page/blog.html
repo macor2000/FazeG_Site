@@ -5,12 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clan Blog</title>
     {%load static %}
-    <link rel = "stylesheet" href = "{% static 'welcome_page/style1.css'%}">
+    <link rel = "stylesheet" href = "{% static 'welcome_page/blogstyle.css'%}">
 
 </head>
 <body>
+    <header> 
+        <div>
+           <h1>Welcome to the FaZeg site!</h1>
+           {%load static %}
+            <img src = "{% static 'welcome_page/images/Fazge logo.jpg' %}" alt = "Cute Frog"
+           width = "50" height="50" >
+       
+   
+   
+   {% if user.is_authenticated %}
+   
+       <p>Welcome, {{ user.username }}!</p>
+       <form action = "{% url 'welcome_page:logout' %}" method = "post">
+               {%csrf_token %}
+               <button type = "submit"> Sign Out</button>
+       </form>
+       </div>   
+   
+      
+       
+   {% else %}
+       <p>You are not logged in.</p>
+       <a href="http://127.0.0.1:8000/welcome_page/login/">Login</a>
+   {% endif %}
+   
+           
+           <nav>
+   
+               <ul>
+                 <li><a href="http://127.0.0.1:8000/welcome_page/">Return to home screen.</a></li>
+                 <li><a href="http://127.0.0.1:8000/welcome_page/signup/">Create an account</a></li>
+               
+               </ul>
+         
+           </nav>
+       </header>
+    <main>
+   
     
     <h1>Blog Posts</h1>
+    {% if user.is_authenticated %}
+    
+    <li><a href="http://127.0.0.1:8000/welcome_page/makePost/">Make a post</a></li>
+    
+    
+{% else %}
+    <p>You are not logged in.</p>
+    <a href="http://127.0.0.1:8000/welcome_page/login/">Login</a>
+{% endif %}
+
+
 
     {% for post in posts %}
     <div class = "blog-post">
@@ -35,6 +84,8 @@
     {% empty %}
     <p>No blog posts available.</p>
     {% endfor %}
+
+</main>
     
 </body>
 </html>

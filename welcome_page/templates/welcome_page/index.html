@@ -11,33 +11,53 @@
 
 <body>
     <header> 
-        
+     <div>
         <h1>Welcome to the FaZeg site!</h1>
+
+        {%load static %}
+         <img src = "{% static 'welcome_page/images/Fazge logo.jpg' %}" alt = "Cute Frog"
+        width = "50" height="50" >
+    
+
+
+{% if user.is_authenticated %}
+
+    <p>Welcome, {{ user.username }}!</p>
+    <form action = "{% url 'welcome_page:logout' %}" method = "post">
+            {%csrf_token %}
+            <button type = "submit"> Sign Out</button>
+    </form>
+    </div>   
+
+   
+    
+{% else %}
+    <p>You are not logged in.</p>
+    <a href="http://127.0.0.1:8000/welcome_page/login/">Login</a>
+{% endif %}
+
+        
         <nav>
+
             <ul>
-                <li><a href = '#' >Our leaders</a></li>
-              <li><a href="http://127.0.0.1:8000/welcome_page/info/">Send in an application!</a></li>
               <li><a href="http://127.0.0.1:8000/welcome_page/blog/">Check out our Blog!</a></li>
+              <li><a href="http://127.0.0.1:8000/welcome_page/signup/">Create an account</a></li>
+            
             </ul>
       
-            <!-- A Search form is another common non-linear way to navigate through a website. -->
-      
-            <form>
-              <input type="search" name="q" placeholder="This doesn't work" />
-              <input type="submit" value="Go!" />
-            </form>
-          </nav>
+        </nav>
     </header>
-    <span>
-    <div>
-    {%load static %}
-    <img src = "{% static 'welcome_page/images/Fazge logo.jpg' %}" alt = "Cute Frog">
-    </div>
+
+
+    <main>
+    
     <section class = "About-us">
     <h2>About us</h2>
-    <p> FaZeg is all about the power of love, growth and loyalty. We want to bring the best out of our
-        little tadpoles so that they can grow into our most powerful soldiers.
+    <p> FaZeg is all about the power of friendship, growth and loyalty. We want to bring the best out of our
+        young tadpoles so that they can grow into our most effective soldiers.  We have been all over black ops 6
+        since it released. And we have been playing both multiplayer and zombies.
     </p>
+    <hr>
     <p>
         FaZeg Clan is a Call of Duty clan that is about making friends and having fun. When you 
         become part of faZeg you'll never want to leave!
@@ -46,20 +66,21 @@
 
 
     <section class = "Join-us">
-        <h2>Why you should join</h2>
-    <p>Here is a list of reasons to join FaZeg.</p>
+     <h2>Why you should join</h2>
     <ul>
-        <li> Fun Vibes. (If the game we happen to be playing is fun).</li>
-        <li> Free pizza (Thats a lie).</li>
-        <li> If you want us to, we'll do your taxes for you, if we desire to (We don't).</li>
+        <li class="perks"> Meet new people</li>
+        <li class = "perks"> A sense of community</li>
+        <li class = "perks"> Da memes</li>
+        <li class = "perks"> Having a good time playing games</li>
     </ul>
     </section>
-   </span>
+</main>
  
 <footer>
 <p> Fake ©Copyright 1991 by Da Frog boiz. Ribbit Ribbit☺</p>
 
 
 </footer>
+
 </body>
 </html>
